@@ -46,7 +46,7 @@ openssl = "0.10.79"
 opentelemetry = { version = "0.30", features = ["metrics"] }
 opentelemetry-otlp = { version = "0.30", features = ["grpc-tonic", "metrics"] }
 opentelemetry_sdk = { version = "0.30", features = ["rt-tokio", "metrics"] }
-rand = "0.8.6"
+rand = "0.10.0"
 regex = "1.12.3"
 scc = { version = "3.7.0", features = ["equivalent", "serde"] }
 serde = { version = "1.0.228", features = ["derive", "rc"] }
