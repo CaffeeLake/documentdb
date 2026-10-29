@@ -11,6 +11,7 @@
 * Support create collection with collation on unsharded collections when `documentdb.enable_collation_with_create_collection` is enabled. *[Feature]*
 * Preserve MinKey lower-bound predicates during native range selectivity estimation so sparse existence predicates retain their custom selectivity. *[Bugfix]*
 * Apply native range selectivity to ordered-index traversal boundaries as well as returned-row estimates, without treating trailing filters as traversal bounds. *[Bugfix]*
+* Reject `dropUser` and `updateUser` user names of 64 bytes or more before PostgreSQL truncates them, so an overlong name can no longer drop or modify an existing user whose name is its 63-byte prefix (#734). *[Bugfix]*
 
 ### documentdb v1.2-0 (Unreleased) ###
 * Use PostgreSQL `date_bin` for `$dateTrunc` with `unit: "day"`, preserving exact calendar days, reference-aligned bins, and timezone boundaries. Reject strides and results outside PostgreSQL's supported range. Controlled by the default-on `documentdb.enable_date_trunc_day_with_pg_bin` setting; turn it off to restore legacy interval-based behavior. *[Bugfix]*
